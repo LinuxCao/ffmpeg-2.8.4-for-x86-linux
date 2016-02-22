@@ -1,0 +1,95 @@
+main.c:54:8: 错误：未知的类型名‘GtkObject’
+ static GtkObject *video_schedule_adj;//video  schedule adjustment
+        ^
+main.c:55:8: 错误：未知的类型名‘GtkObject’
+ static GtkObject *voice_schedule_adj;//voice  schedule adjustment
+        ^
+main.c: 在函数‘on_main_window_key_press_event’中:
+main.c:440:10: 错误：‘GDK_Up’未声明(在此函数内第一次使用)
+     case GDK_Up:
+          ^
+main.c:440:10: 附注：每个未声明的标识符在其出现的函数内只报告一次
+main.c:447:10: 错误：‘GDK_Left’未声明(在此函数内第一次使用)
+     case GDK_Left:
+          ^
+main.c:454:10: 错误：‘GDK_Right’未声明(在此函数内第一次使用)
+     case GDK_Right:
+          ^
+main.c:461:10: 错误：‘GDK_Down’未声明(在此函数内第一次使用)
+     case GDK_Down:
+          ^
+main.c:468:7: 错误：‘GDK_Escape’未声明(在此函数内第一次使用)
+  case GDK_Escape:
+       ^
+main.c:475:7: 错误：‘GDK_space’未声明(在此函数内第一次使用)
+  case GDK_space:
+       ^
+main.c: 在函数‘build_gui’中:
+main.c:543:5: 警告：‘gtk_vbox_new’ is deprecated: Use 'gtk_box_new' instead [-Wdeprecated-declarations]
+     main_vbox = gtk_vbox_new(0, 0);  
+     ^
+In file included from /usr/include/gtk-3.0/gtk/gtk.h:272:0,
+                 from main.c:21:
+/usr/include/gtk-3.0/gtk/deprecated/gtkvbox.h:61:13: 附注：在此声明
+ GtkWidget * gtk_vbox_new      (gboolean homogeneous,
+             ^
+main.c:546:5: 警告：‘gtk_hbox_new’ is deprecated: Use 'gtk_box_new' instead [-Wdeprecated-declarations]
+     status_controls_hbox = gtk_hbox_new(FALSE, 0);  
+     ^
+In file included from /usr/include/gtk-3.0/gtk/gtk.h:248:0,
+                 from main.c:21:
+/usr/include/gtk-3.0/gtk/deprecated/gtkhbox.h:63:13: 附注：在此声明
+ GtkWidget * gtk_hbox_new      (gboolean homogeneous,
+             ^
+main.c:563:5: 警告：‘gtk_hbox_new’ is deprecated: Use 'gtk_box_new' instead [-Wdeprecated-declarations]
+     play_controls_hbox = gtk_hbox_new(FALSE, 10);  
+     ^
+In file included from /usr/include/gtk-3.0/gtk/gtk.h:248:0,
+                 from main.c:21:
+/usr/include/gtk-3.0/gtk/deprecated/gtkhbox.h:63:13: 附注：在此声明
+ GtkWidget * gtk_hbox_new      (gboolean homogeneous,
+             ^
+main.c:590:21: 警告：从不兼容的指针类型赋值 [-Wincompatible-pointer-types]
+  video_schedule_adj = gtk_adjustment_new (0.00, 0.00, 101.00, 0.01, 0.1, 1.0);
+                     ^
+main.c:592:2: 警告：‘gtk_hscale_new’ is deprecated: Use 'gtk_scale_new' instead [-Wdeprecated-declarations]
+  seek_scale = gtk_hscale_new (GTK_ADJUSTMENT (video_schedule_adj));
+  ^
+In file included from /usr/include/gtk-3.0/gtk/gtk.h:251:0,
+                 from main.c:21:
+/usr/include/gtk-3.0/gtk/deprecated/gtkhscale.h:61:12: 附注：在此声明
+ GtkWidget* gtk_hscale_new            (GtkAdjustment *adjustment);
+            ^
+main.c:596:2: 警告：隐式声明函数‘gtk_range_set_update_policy’ [-Wimplicit-function-declaration]
+  gtk_range_set_update_policy(GTK_RANGE(seek_scale), GTK_UPDATE_CONTINUOUS);  
+  ^
+main.c:596:53: 错误：‘GTK_UPDATE_CONTINUOUS’未声明(在此函数内第一次使用)
+  gtk_range_set_update_policy(GTK_RANGE(seek_scale), GTK_UPDATE_CONTINUOUS);  
+                                                     ^
+main.c:624:21: 警告：从不兼容的指针类型赋值 [-Wincompatible-pointer-types]
+  voice_schedule_adj = gtk_adjustment_new (128, 0, 129, 1, 1, 1);
+                     ^
+main.c:625:2: 警告：‘gtk_hscale_new’ is deprecated: Use 'gtk_scale_new' instead [-Wdeprecated-declarations]
+  voice_scale = gtk_hscale_new (GTK_ADJUSTMENT (voice_schedule_adj));
+  ^
+In file included from /usr/include/gtk-3.0/gtk/gtk.h:251:0,
+                 from main.c:21:
+/usr/include/gtk-3.0/gtk/deprecated/gtkhscale.h:61:12: 附注：在此声明
+ GtkWidget* gtk_hscale_new            (GtkAdjustment *adjustment);
+            ^
+main.c:654:2: 警告：‘gtk_widget_set_double_buffered’ is deprecated [-Wdeprecated-declarations]
+  gtk_widget_set_double_buffered(video_output, FALSE);
+  ^
+In file included from /usr/include/gtk-3.0/gtk/gtkapplication.h:27:0,
+                 from /usr/include/gtk-3.0/gtk/gtkwindow.h:33,
+                 from /usr/include/gtk-3.0/gtk/gtkdialog.h:33,
+                 from /usr/include/gtk-3.0/gtk/gtkaboutdialog.h:30,
+                 from /usr/include/gtk-3.0/gtk/gtk.h:31,
+                 from main.c:21:
+/usr/include/gtk-3.0/gtk/gtkwidget.h:876:23: 附注：在此声明
+ void                  gtk_widget_set_double_buffered    (GtkWidget    *widget,
+                       ^
+main.c: 在函数‘main’中:
+main.c:726:74: 错误：‘GDK_space’未声明(在此函数内第一次使用)
+  gtk_widget_add_accelerator(play_button,"clicked",play_button_accelerate,GDK_space,(GdkModifierType)0,GTK_ACCEL_VISIBLE);
+                                                                          ^
